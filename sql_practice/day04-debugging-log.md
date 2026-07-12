@@ -10,11 +10,9 @@ FROM titanic
 GROUP BY pclass;
 ```
 
-**My Guess:**
 
-_____________________________________
 
-**Actual Issue:**
+** Issue:**
 
 `sex` is in the SELECT list but is neither aggregated nor included in the GROUP BY clause.
 
@@ -45,11 +43,8 @@ WHERE COUNT(*) > 200
 GROUP BY pclass;
 ```
 
-**My Guess:**
 
-_____________________________________
-
-**Actual Issue:**
+** Issue:**
 
 Aggregate functions like `COUNT()` cannot be used in the `WHERE` clause because `WHERE` executes before `GROUP BY`.
 
@@ -78,11 +73,8 @@ SELECT name
 FROM titanic;
 ```
 
-**My Guess:**
 
-_____________________________________
-
-**Actual Issue:**
+**Issue:**
 
 Missing comma between `name` and `fare`.
 
@@ -110,11 +102,9 @@ FROM titanic
 GROUP BY embarkd;
 ```
 
-**My Guess:**
 
-_____________________________________
 
-**Actual Issue:**
+**Issue:**
 
 Column name is misspelled (`embarkd` instead of `embarked`).
 
@@ -142,11 +132,8 @@ SELECT name,
 FROM titanic;
 ```
 
-**My Guess:**
 
-_____________________________________
-
-**Actual Issue:**
+**Issue:**
 
 `age` is numeric, but `'Unknown'` is a string. Use a numeric replacement or convert the result to text if that's your goal.
 
